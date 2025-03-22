@@ -1,4 +1,4 @@
-$inputFolder = ""
+$inputFolder = "D:\test"
 $seperator = ", "
 $files = Get-ChildItem $inputFolder -Recurse -File -Include '*.mp3', '*.flac', '*.m4a', '*.ogg', '*.wav'
 $regexPattern = '\s*(?=\S)\W(?!\S)\s*'
@@ -24,14 +24,17 @@ foreach ($file in $files) {
 
     $artistList = $artistTagFixed.split($seperator)
     
-    Write-Host "artist list: `n$($artistList) $($artistList.count)"
+    Write-Host "total artists: $($artistList.count)"
+    foreach ($artist in $artistList){
+        Write-Host $artist
+    }
     echo ""
 
     # construct args for kid3
     $counter = 0
     $metadataArgs = @()
     if ($artistList.count -gt 1){
-        echo "applying the artists"
+        echo "applying the artists`n"
         foreach ($artist in $artistList){
             $metadataArgs += '-c'
             $metadataArgs += "set artists[$counter] `"$artist`""
