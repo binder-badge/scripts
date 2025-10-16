@@ -29,5 +29,6 @@ do
         sed 's/^\/music\//\.\.\//g;
             /^#.*$/d; 
             /^$/d' > "$playlistFilePath"
-
 done
+
+rm outut.json
