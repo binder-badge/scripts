@@ -1,10 +1,10 @@
 #! /bin/bash
 # user variables
-url="music.local.cheaping.top"
-user="Guest"
-password="guest"
+url="music.domain.com"
+user="user"
+password="password"
 salt="123456"
-playlistFolder="/media/1TBStorage/samba/Music/Playlists"
+playlistFolder="/Music/Playlists"
 
 subsonic_ver="1.16.1"
 
